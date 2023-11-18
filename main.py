@@ -42,9 +42,9 @@ async def date():
     """Returns current time!"""
     return {"date" : datetime.datetime.now()}
 
-@app.get("/api/shirts")
+@app.get("/api/shirts") #query prameter
 #async def getShirt(size: Optional[str] = None, color: Optional[str] =None) -> list:
-def getShirt(size: str|None = None, color: str|None =None) -> List:
+def getShirt(size: str|None = None, color: str|None =None) -> List: #type hints
     result = dataBase
     if size:
         result = [car for car in result if car ['size'] == size]
@@ -53,7 +53,7 @@ def getShirt(size: str|None = None, color: str|None =None) -> List:
     return result
 
 
-@app.get("/items/{id}")
+@app.get("/items/{id}") #path parameter
 def item_by_id(id : int) -> dict:
     result = [car for car in dataBase if car ['id'] == id]
     if (result):
