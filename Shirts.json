@@ -24,9 +24,9 @@
         "id": 4
     },
     {
-        "size": "s",
-        "color": "pink",
-        "group": "kids",
+        "size": "xl",
+        "color": "gray",
+        "group": "men",
         "id": 5
     },
     {
@@ -130,17 +130,5 @@
         "color": "pink",
         "group": "men",
         "id": 22
-    },
-    {
-        "size": "xxxl",
-        "color": "pink",
-        "group": "men",
-        "id": 23
-    },
-    {
-        "size": "s",
-        "color": "pink",
-        "group": "men",
-        "id": 24
     }
 ]

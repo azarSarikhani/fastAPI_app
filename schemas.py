@@ -7,6 +7,15 @@ class ShirtInput(BaseModel):
 	color: str
 	group: str | None = "kids"
 
+	class Config:
+		schema_extra = {
+			"example":{
+				"size": "free size",
+				"color": "white",
+				"group": "unisex"
+			}
+		}
+
 class ShirtOutput(ShirtInput):
 	id :int 
 
@@ -26,8 +35,6 @@ def save_db(shirts: list[ShirtOutput]):
 	
 def save_new(shirt: ShirtOutput):
 	with open("new_shirts.json", "w") as f:
-		print(shirt)
-		print(type(shirt))
 		json.dump(shirt.dict(), f, indent=4)
 
 

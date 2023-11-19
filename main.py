@@ -5,7 +5,7 @@ import uvicorn
 from typing import List
 from typing import Dict
 
-app = FastAPI(title="FastAPI app",
+app = FastAPI(title="FastAPI Shirt app",
               description="python project with fastAPI",
     summary="Practice project with python and fastAPI",
     version="0.0.1") #fastAPI constructor is called with arguments here
@@ -53,7 +53,32 @@ def add_shirt(shirt: ShirtInput) -> ShirtOutput: #Specifying(type hinting) the o
     save_new(new_shirt)
     save_db(dataBase)
     return(new_shirt)
-    
+
+#A 204 status code is used when the server successfully processes the request,
+#  but there is no content to return to the client.
+@app.delete("/items/{id}", status_code=204)
+def remove_shirt(id: int) -> None:
+    matches = [shirt for shirt in dataBase if shirt.id == id]  
+    if matches:
+        shirt =matches[0]
+        dataBase.remove(shirt)
+        save_db(dataBase)
+    else:
+        raise HTTPException(status_code=404, detail=f"No shirt with that id={id}.")
+
+@app.put("/api/shirts/{id}", response_model=ShirtOutput)
+#new_shirt is a pydantic object that will come with the request's body
+def change_shirt(id: int, new_shirt: ShirtInput) -> ShirtOutput:
+    matches = [shirt for shirt in dataBase if shirt.id == id]  
+    if matches:
+        shirt = matches[0]
+        shirt.color = new_shirt.color
+        shirt.size = new_shirt.size
+        shirt.group = new_shirt.group
+        save_db(dataBase)
+        return shirt
+    else:
+        raise HTTPException(status_code=404, detail=f"No shirt with that id={id}.")
 
 if __name__ == "__main__":
     print("this function is called without being imported.")
