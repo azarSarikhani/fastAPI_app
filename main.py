@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from schemas import load_db
+from schemas import load_db, save_db, save_new, ShirtInput, ShirtOutput
 import datetime
 import uvicorn
 from typing import List
@@ -23,7 +23,7 @@ async def date():
 
 @app.get("/api/shirts") #query prameter
 #async def getShirt(size: Optional[str] = None, color: Optional[str] =None) -> list:
-def getShirt(size: str|None = None, color: str|None =None) -> List: #type hints
+def get_shirt(size: str|None = None, color: str|None =None) -> List: #type hints
     result = dataBase
     if size:
         result = [shirt for shirt in result if shirt.size == size]
@@ -42,6 +42,18 @@ def item_by_id(id : int) -> dict:
         return result[0].model_dump()
     else:
         raise HTTPException(status_code=404, detail=f"No Shirt with the id= {id} found!")
+
+@app.post("/api/shirts", response_model=ShirtOutput) #declaring return type here used to work and it still does
+def add_shirt(shirt: ShirtInput) -> ShirtOutput: #Specifying(type hinting) the output ddidn't used to do anything here
+    new_shirt = ShirtOutput(size=shirt.size, 
+                            color=shirt.color,
+                            id=len(dataBase) + 1,
+                            group=shirt.group)
+    dataBase.append(new_shirt)
+    save_new(new_shirt)
+    save_db(dataBase)
+    return(new_shirt)
+    
 
 if __name__ == "__main__":
     print("this function is called without being imported.")
