@@ -43,5 +43,7 @@ Alternatively install all of the requirments listed in [requirements](https://gi
 > $:```export db_name=shopdb```
 > 
 > $:```export tablename=animals```
-> 
+
+6. And finally run the app
+   
 > $:```python app.py```
