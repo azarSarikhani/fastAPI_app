@@ -14,7 +14,7 @@ This is a project done in Python that uses fastAPI to creat an app, mysql is use
 
 3. Since databaseis alreay created, you just need to creat tables, and a user for fastAPI:
 
-see init.sql
+for instruction on how to do this see [init.sql](https://github.com/azarSarikhani/fastAPI_app/blob/main/init.sql)
 
 more info:
 1. [**SQL Alcemy docs**](https://docs.sqlalchemy.org/en/20/core/engines.html#mysql)
