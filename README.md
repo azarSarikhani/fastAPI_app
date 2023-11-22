@@ -10,7 +10,7 @@ This is a project done in Python that uses fastAPI to creat an app, mysql is use
 > $:```docker run --name mysqlapp -it -e MYSQL_ROOT_PASSWORD=88fhrqGYr0a9i5Cn2FR4SHT1iDCl3gtY -e MYSQL_DATABASE=shopdb -p 3306:3306 -d mysql:latest```
 
 
-2. use mysql the root user  and either their cli tool 'mysql -h 127.0.0.1  -u root' or workbench to log in to the server
+2. use mysql the root user  and either the cli tool $:```mysql -h 127.0.0.1  -u root -p``` or workbench to log in to the server
 
 3. create database, tables, and a user for fastapi:
 
