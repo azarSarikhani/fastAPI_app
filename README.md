@@ -12,7 +12,7 @@ This is a project done in Python that uses fastAPI to creat an app, mysql is use
 
 2. use mysql the root user  and either the cli tool $:```mysql -h 127.0.0.1  -u root -p``` or workbench to log in to the server
 
-3. create database, tables, and a user for fastapi:
+3. Since databaseis alreay created, you just need to creat tables, and a user for fastAPI:
 
 see init.sql
 
