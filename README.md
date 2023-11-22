@@ -34,9 +34,9 @@ Alternatively install all of the requirments listed in [requirements](https://gi
 
 5. Export env variables and run the app!
 
-> $:```export dbuser=root```
+> $:```export dbuser=fastapi_user```
 > 
-> $:```export dbpass=88fhrqGYr0a9i5Cn2FR4SHT1iDCl3gtY```
+> $:```export dbpass=fastapi_pass```
 > 
 > $:```export db_adress=127.0.0.1```
 > 
