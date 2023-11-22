@@ -26,7 +26,9 @@ more info:
 
 You need to have fastAPI installed, you might want to do it in a vertual environment. To do so:
 
-> $:``` pip install "fastapi[all]" ``` 
+> $:``` pip install "fastapi[all]" ```
+
+Alternatively install all of the requirments listed in [requirements](https://github.com/azarSarikhani/fastAPI_app/blob/main/requirements.txt)
 
 
 5. Export env variables and run the app!
