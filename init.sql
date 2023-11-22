@@ -10,6 +10,6 @@ INSERT INTO animals (name) VALUES
 
 SELECT * FROM animals;
 
-CREATE USER 'fastpi'@'127.0.0.1' IDENTIFIED BY 'fastapipass';
+CREATE USER 'fastpi_user' IDENTIFIED BY 'fastapi_pass';
 
-GRANT ALL PRIVILEGES ON shopdb.animals TO 'fastpi'@'127.0.0.1';
+GRANT ALL PRIVILEGES ON shopdb.animals TO 'fastpi_user';
