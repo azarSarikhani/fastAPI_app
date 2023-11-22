@@ -27,7 +27,9 @@ more info:
 1. [**MySQL workbench**](https://www.mysql.com/products/workbench/)
 
 4. install fastAPI!
+
 You need to have fastAPI installed, you might want to do it in a vertual environment. To do so:
+
 > $:``` pip install "fastapi[all]" ``` 
 
 
