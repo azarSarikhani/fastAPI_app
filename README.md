@@ -1,10 +1,35 @@
 # fastAPI_app
-This is a project done in Python that uses fastAPI to creat an app.
+This is a project done in Python that uses fastAPI to creat an app, mysql is used for database.
 
-## Usage 
+
+## setting  up mysql locally:
+
+1. 
+
+```docker pull mysql:latest```
+```docker run --name mysqlapp -it -e``` ```MYSQL_ROOT_PASSWORD=88fhrqGYr0a9i5Cn2FR4SHT1iDCl3gtY -e``` ```MYSQL_DATABASE=shopdb -p 3306:3306 -d mysql:latest```
+
+2. use mysql the root user  and either their cli tool 'mysql -h 127.0.0.1  -u root' or workbench to log in to the server
+
+3. create database, tables, and a user for fastapi:
+
+see init.sql
+
+more info:
+## https://docs.sqlalchemy.org/en/20/core/engines.html#mysql
+## https://fastapi.tiangolo.com/tutorial/sql-databases/
+## https://pypi.org/project/mysqlclient/
+## https://www.mysql.com/products/workbench/
+
+4. install fastAPI!
 You need to have fastAPI installed, you might want to do it in a vertual environment. To do so:
 > $:``` pip install "fastapi[all]" ``` 
 
-After that just cd to the directory you have cloned this repo and,
+5. Export env variables and run the app!
 
-> $:```uvicorn main:app --reload```
+```export dbuser=root```
+```export dbpass=88fhrqGYr0a9i5Cn2FR4SHT1iDCl3gtY```
+```export db_adress=127.0.0.1```
+```export db_name=shopdb```
+```export tablename=animals```
+```python app.py```
